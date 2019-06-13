@@ -11,48 +11,49 @@
 
 \maketitle
 
-The world we live in is constituted by parts that communicate with each other and exchange information: they are the so-called open systems. Studying the dynamics of an open system is not an easy problem, because of the complexity of the interaction between the parts involved. Since the scientific world has been able to perform experiments on nanoscopic scale, where the classical mechanics is not a good approximation of quantum mechanics anymore, the need to understand opens \emph{quantum} systems has arisen.
+The world we live in is constituted by parts that communicate with each other and exchange information: they are the so-called open systems. Studying the dynamics of an open system is not an easy problem, because of the complexity of the interactions between the parts involved. Since the scientific world has been able to perform experiments on nanoscopic scale, where the laws of classical mechanics no longer give a correct description of the underlying physics, and thus the need to overcome this limitation and to understand open quantum systems has become mandatory.
 
-Over the years analytical and numerical strategies has been developed to overcome this complexity. In addition to these more "traditional" approaches, over the last two decades the field of quantum simulation~\cite{special_issue_nature} has been reveailng as a new and intriguing alternative: this paves the way to reproduce Hamiltonian models by means of suitable experimental platforms that can be controlled with a high degree of accuracy. Several proposals have been put in practice, as superconducting circuits with QED cavities or platforms that implement ultracold atoms in optical lattices. These simulators allow to realize spin systems; this is one of the reason why studying them is important.
+Over the years analytical and numerical strategies have been developed in order to tackle this highly non trivial task. In addition to these more "traditional" approaches, over the last two decades the field of quantum simulation~\cite{special_issue_nature} has been reveailng as a new and intriguing alternative: this paves the way to reproduce Hamiltonian models by means of suitable experimental platforms that can be controlled with a high degree of accuracy. Several proposals have been put in practice, as superconducting circuits with QED cavities or platforms that implement ultracold atoms in optical lattices. These simulators also allow to realize spin systems; this is one of the reason why studying them is is particularly important.
 
-The method of the study of an open system lies in the master equation that describes the evolution of the system density matrix, here written in the Lindblad formalism~\cite{pet_breuer:open_quantum}:
+The method of the study of an open quantum system lies in the master equation that describes the evolution of the system density matrix $\rho$, here written in the Lindblad formalism~\cite{pet_breuer:open_quantum}:
 
 \begin{equation*}
     \dot{\rho} = -\frac{i}{\hbar}[H, \rho] - \sum_{i=1}^{N^2-1} \Bigl(\frac{1}{2}L_i^{\dagger}L_i\rho + \frac{1}{2}\rho L_i^{\dagger}L_i - L_i\rho L_i^{\dagger}\Bigl),
 \end{equation*}
-$N$ being the dimension of Hilbert space and $\gamma_a$ the dissipation rate.
+where $N$ is the dimension of Hilbert space, $H$ denotes the Hamiltonian of the system, and $L_i$ are the so called Lindblad jump operators which describe the coupling of the system with an external bath.
 
-We have chosen a boundary-driven Heisenberg chain: a prototypical interacting quantum model in one dimension. In particular, we have investigated the properties of a XYZ Heisenberg spin-1/2 chain coupled to a pair of dissipators acting only on the edge of the system. In particular, the system is driven far from equilibrium with two Lindblad operators chosen in this way:
+We have chosen a boundary-driven Heisenberg chain: a prototypical interacting quantum model in one dimension. In particular, we have investigated the properties of a XYZ Heisenberg spin-1/2 chain coupled to a pair of dissipators acting only on the edges of the system. 
 
-\begin{equation*}
-    L_1 = \sqrt{\gamma} \sigma^+ \quad \text{and} \quad L_2 =\sqrt{\gamma}\sigma^-,
-\end{equation*}
-where 
-\begin{equation*}
-    \sigma^+ \equiv \frac{1}{2}(\sigma^x + i\sigma^y), \quad \sigma^- \equiv \frac{1}{2}(\sigma^x - i\sigma^y)
-\end{equation*}
-are the raising and lowering spin operators; their effect is the raising ($\sigma^+$) and lowering ($\sigma^-$) the z-component of the spins in the boundaries of the chain.
-
-%spiega in due righe qual è l'effetto di questi operatori: uno crea particelle in modo incoerente, l'altro le distrugge (sui siti di bordo)...
-
-The model under consideration is a chain made up by $L$ sites, in each of which a spin-1/2 lies, is described by an Hamiltonian of this type:
+In particular, the system under consideration is a chain made up by $L$ sites, in each of which a spin-1/2 lies and is described by an Hamiltonian of this type:
 \begin{equation*}
     H = \sum_{i = 1}^{L-1} (J_x\sigma_i^x\sigma_{i+1}^x + J_y\sigma_i^y \sigma_{i+1}^y + J_z \sigma_i^z \sigma_{i+1}^z),
 \end{equation*}
-where $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices representing the spin-1/2 and $J_x$, $J_y$ and $J_z$ are the coupling constants in x, y, z spin direction.
+where $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices representing the spin-1/2 and $J_x$, $J_y$ and $J_z$ are the coupling constants in x, y, z spin directions. All over the dissertation, the coupling constants are chose to be $J_x = 1$ and $J_y = 0.5$, while in the first part of the analysis $J_z = 1$ and in the second part its value will be varied.
 
-In such a system two kinds of dynamics compete: the Hamiltonian one and the dissipative one. Considering the complexity of treating a combination of interacting and dissipative problems~\cite{savona}~\cite{Lee_Haffner_Cross}~\cite{phase_trans_spin_system}, take an analytical path would have been unfeasible. Therefore, we have realized a purely numerical analysis. We have studied the steady-state as the asympotic long-time solution of the master equation mentioned above; in this state, we have analyzed three observables under different regimes of dissipation and of Hamiltonian evolution: magnetization profile, two-point correlation function, spin current. 
+The system is driven far from equilibrium with two Lindblad operators chosen in this way:
+\begin{equation*}
+    L_1 = \sqrt{\gamma} \sigma_1^+ \quad \text{and} \quad L_2 =\sqrt{\gamma}\sigma_L^-,
+\end{equation*}
+where $\gamma$ is the dissipation rate and 
+\begin{equation*}
+    \sigma^+ \equiv \frac{1}{2}(\sigma^x + i\sigma^y), \quad \sigma^- \equiv \frac{1}{2}(\sigma^x - i\sigma^y)
+\end{equation*}
+are the raising and lowering spin operators acting on the first and the last site respectively; their effect is the raising ($\sigma^+$) and lowering ($\sigma^-$) the z-component of the spins in the boundaries of the chain. 
 
-With regard to magnetization, we have obtained a non-linear trend that becomes more and more clear as the size of the chain increases. In the 16-sites chain, the longest we have studied, the bulk is characterized by zero magnetization and only in the edges it tends to increase; that is plausible because the driving effects prevail in that part of the chain. Moreover, while the dimension of the chain increases the plateau with zero magnetization grows. 
+%spiega in due righe qual è l'effetto di questi operatori: uno crea particelle in modo incoerente, l'altro le distrugge (sui siti di bordo)...
+
+In such a system two kinds of dynamics compete: the Hamiltonian one and the dissipative one. Due to the complexity of treating a combination of interacting and dissipative problems~\cite{phase_trans_spin_system}~\cite{Lee_Haffner_Cross}~\cite{savona}, following an analytic route is generally unfeasible. Therefore, we have realized a purely numerical analysis. We have studied the steady-state as the asympotic long-time solution of the master equation mentioned above; in this state, we have analyzed three observables under different regimes of dissipation and of Hamiltonian evolution: magnetization profile, two-point correlation function, spin current. 
+
+With regard to magnetization, we have obtained a non-linear trend that becomes more and more clear as the size of the chain increases. In the 16-sites chain, the longest we have studied, the bulk is characterized by zero magnetization and only in the edges it tends to increase; that is plausible because the driving effects prevail in that part of the chain. Moreover, while the dimension of the chain increases, the plateau with zero magnetization grows. 
 
 The two-point correlation function, studied between equidistant spin from the center of the chain, reveals an exponential profile. Here, as in the analysis of the previous observable, the behaviour becomes more evident as the chain dimensions get bigger, because of the size effect.
 
-The third physical quantity that we have examined is the spin current. The profile is polynomial, with two peak values corresponding to the currents between the first two and the last two spin of the chain: they are the maximum values because of the driving effects of the dissipators. From the edge values of spin current, it smoothly decreases. The middle area in which it reaches the lowest values gets much flatter as the chain length grows. An interesting thing about the peak values of the spin current is the fact that they reach a maximum value while $\gamma$ increases and then decrease until they  asymptotically tend to zero.
+The third physical quantity that we have examined is the spin current. The profile in the physical space is polynomial, with two peak values corresponding to the currents between the first two and the last two spins of the chain: they are the maximum values because of the driving effects of the dissipators. From the edge values of spin current, it smoothly decreases. The middle area in which it reaches the lowest values gets much flatter as the chain length grows. An interesting thing about the peak values of the spin current is the fact that they reach a maximum value while $\gamma$ increases and then decrease until they  asymptotically tend to zero, thus exhibiting a nonmonotonic behaviour.
 
 Studying the spin current varying the coupling constant $J_z$, we discover a discontinuous behaviour around $J_z = 0.5$: instead of the polynomial profile seen previously, %(this behaviour is instead replayed by the spin current of the chain characterized by $J_z \geq 0.5$), 
-the spins in the bulk of the chain (i.e. all of them excluding the first and the last) seem to produce a constant current, while in the boundaries is registered the same spin current for all the chains with $J_z < 1$. A similar behaviour is observed in the study of magnetization profile: the edges of the chain are characterized by the same values for all the values of $J_z < 1$. Here there is no signature of the discontinuity noticed during the study of spin current. Instead, the two-point correlation function reveals another discontinuity again around $J_z = 0.5$. In particular, for all chains characterized by these values of coupling constant the two-point correlation function is zero.
+the spins in the bulk of the chain (i.e. all of them excluding the first and the last) seem to produce a constant current, while in the boundaries the same spin current is found for all $J_z < 1$. A similar behaviour is observed in the study of magnetization profile: the edges of the chain are characterized by the same values for all the values of $J_z < 1$. Here there is no signature of the discontinuity noticed during the study of spin current. Instead, the two-point correlation function reveals another discontinuity again around $J_z = 0.5$. In particular, for all chains characterized by these values of coupling constant the two-point correlation function is zero.
 
-In order to develop this analysis studying three numerical methods has been necessary. The fundamental use of the \emph{matrix product operators} (MPO) method\cite{mpo_method} has allowed us to compute the physical quantities for all lengths of the chain examined in this thesis (8, 12, 16 sites). A preexisting code has been adjusted for the problem under consideration. The QT method\cite{QT_method} has been useful to compare the results obtained from MPO for 8-sites chain and to explore the plausibility of some results for 10-sites chain. The CSR method~\cite{CSR_method} has been studied and implemented but it seems not to be useful for this kind of quantum systems. In particular, it seems to work more properly when all the spins of the chain are coupled to dissipators. For the last two numerical methods, a code has been written and implemented from scratch, during this thesis work.
+In order to develop this analysis, three different numerical methods have been employed.  The fundamental use of the \emph{matrix product operators} (MPO) method\cite{mpo_method} has allowed us to compute the physical quantities for all lengths of the chain examined in this thesis (8, 12, 16 sites). A preexisting code has been adjusted for the problem under consideration. The \emph{quantum trajectories} (QT) method\cite{QT_method} has been useful to compare the results obtained from MPO for 8-sites chain and to explore the plausibility of some results for 10-sites chain. The \emph{corner-space renormalization} (CSR) method~\cite{CSR_method} has been studied and implemented but it seems not to be useful for this kind of quantum systems. In particular, it seems to work more properly when all the spins of the chain are coupled to dissipators. For the last two numerical methods, a code has been written and implemented from scratch, during this thesis work.
 
 %In the present work, an analysis of magnetization profile, spin transport and correlation functions, around the z-direction isotropic point $\Delta = 1$ has been done, for spin chains of lengths of 8, 16, 32 spins. Simulations have been performed by means of QT, CSR, MPO methods, so that it has been possible to set a numerical benchmark among the available strategies.
 
