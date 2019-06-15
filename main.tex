@@ -11,11 +11,11 @@
 
 \maketitle
 
-The world we live in is constituted by parts that communicate with each other and exchange information: they are the so-called open systems. Studying the dynamics of an open system is not an easy problem, because of the complexity of the interactions between the parts involved. Since the scientific world has been able to perform experiments on nanoscopic scale, where the laws of classical mechanics no longer give a correct description of the underlying physics, and thus the need to overcome this limitation and to understand open quantum systems has become mandatory.
+The world we live in is constituted by parts that communicate with each other and exchange information: they are the so-called open systems. Studying the dynamics of an open system is not an easy problem, because of the complexity of the interactions between the parts involved. Since the scientific world has been able to perform experiments on nanoscopic scale, where the laws of classical mechanics no longer give a correct description of the underlying physics, the need to overcome this limitation and to understand open quantum systems has become mandatory.
 
-Over the years analytical and numerical strategies have been developed in order to tackle this highly non trivial task. In addition to these more "traditional" approaches, over the last two decades the field of quantum simulation~\cite{special_issue_nature} has been reveailng as a new and intriguing alternative: this paves the way to reproduce Hamiltonian models by means of suitable experimental platforms that can be controlled with a high degree of accuracy. Several proposals have been put in practice, as superconducting circuits with QED cavities or platforms that implement ultracold atoms in optical lattices. These simulators also allow to realize spin systems; this is one of the reason why studying them is is particularly important.
+Over the years analytical and numerical strategies have been developed in order to tackle this highly non trivial task. In addition to these more ``traditional'' approaches, over the last two decades the field of quantum simulation~\cite{special_issue_nature} has been revealing as a new and intriguing alternative: this paves the way to reproduce Hamiltonian models by means of suitable experimental platforms that can be controlled with a high degree of accuracy. Several proposals have been put in practice, as superconducting circuits with QED cavities or platforms that make use of ultracold atoms in optical lattices. These simulators also allow to realize spin systems; this is one of the reason why studying them is particularly important.
 
-The method of the study of an open quantum system lies in the master equation that describes the evolution of the system density matrix $\rho$, here written in the Lindblad formalism~\cite{pet_breuer:open_quantum}:
+The method of study of an open quantum system lies in the master equation that describes the evolution of the system density matrix $\rho$, here written in the Lindblad formalism~\cite{pet_breuer:open_quantum}:
 
 \begin{equation*}
     \dot{\rho} = -\frac{i}{\hbar}[H, \rho] - \sum_{i=1}^{N^2-1} \Bigl(\frac{1}{2}L_i^{\dagger}L_i\rho + \frac{1}{2}\rho L_i^{\dagger}L_i - L_i\rho L_i^{\dagger}\Bigl),
@@ -24,11 +24,11 @@ where $N$ is the dimension of Hilbert space, $H$ denotes the Hamiltonian of the 
 
 We have chosen a boundary-driven Heisenberg chain: a prototypical interacting quantum model in one dimension. In particular, we have investigated the properties of a XYZ Heisenberg spin-1/2 chain coupled to a pair of dissipators acting only on the edges of the system. 
 
-In particular, the system under consideration is a chain made up by $L$ sites, in each of which a spin-1/2 lies and is described by an Hamiltonian of this type:
+The system under consideration is a chain made up by $L$ sites, in each of which a spin-1/2 lies and is described by an Hamiltonian of this type:
 \begin{equation*}
     H = \sum_{i = 1}^{L-1} (J_x\sigma_i^x\sigma_{i+1}^x + J_y\sigma_i^y \sigma_{i+1}^y + J_z \sigma_i^z \sigma_{i+1}^z),
 \end{equation*}
-where $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices representing the spin-1/2 and $J_x$, $J_y$ and $J_z$ are the coupling constants in x, y, z spin directions. All over the dissertation, the coupling constants are chose to be $J_x = 1$ and $J_y = 0.5$, while in the first part of the analysis $J_z = 1$ and in the second part its value will be varied.
+where $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices representing the spins and $J_x$, $J_y$ and $J_z$ are the coupling constants in x, y, z spin directions. All over the dissertation, the coupling constants are chose to be $J_x = 1$ and $J_y = 0.5$, while in the first part of the analysis $J_z = 1$ and in the second part its value will be varied.
 
 The system is driven far from equilibrium with two Lindblad operators chosen in this way:
 \begin{equation*}
@@ -50,8 +50,8 @@ The two-point correlation function, studied between equidistant spin from the ce
 
 The third physical quantity that we have examined is the spin current. The profile in the physical space is polynomial, with two peak values corresponding to the currents between the first two and the last two spins of the chain: they are the maximum values because of the driving effects of the dissipators. From the edge values of spin current, it smoothly decreases. The middle area in which it reaches the lowest values gets much flatter as the chain length grows. An interesting thing about the peak values of the spin current is the fact that they reach a maximum value while $\gamma$ increases and then decrease until they  asymptotically tend to zero, thus exhibiting a nonmonotonic behaviour.
 
-Studying the spin current varying the coupling constant $J_z$, we discover a discontinuous behaviour around $J_z = 0.5$: instead of the polynomial profile seen previously, %(this behaviour is instead replayed by the spin current of the chain characterized by $J_z \geq 0.5$), 
-the spins in the bulk of the chain (i.e. all of them excluding the first and the last) seem to produce a constant current, while in the boundaries the same spin current is found for all $J_z < 1$. A similar behaviour is observed in the study of magnetization profile: the edges of the chain are characterized by the same values for all the values of $J_z < 1$. Here there is no signature of the discontinuity noticed during the study of spin current. Instead, the two-point correlation function reveals another discontinuity again around $J_z = 0.5$. In particular, for all chains characterized by these values of coupling constant the two-point correlation function is zero.
+In the second part of this thesis, we have also studied the spin current varying the coupling constant $J_z$ in the Hamiltonian. We discovered a discontinuous behaviour around $J_z = 0.5$: for $J_z < 0.5$, %(this behaviour is instead replayed by the spin current of the chain characterized by $J_z \geq 0.5$), 
+the spins in the bulk of the chain (i.e. all of them excluding the first and the last) seem to produce a constant current; for $J_z > 0.5$, the spin current has the polynomial trend already observed. Even for the magnetization profile, we observe that the edges of the chain are characterized by the same values, for any $J_z<1$. However, for this observable we do not see any signature of discontinuity in the bulk, in contrast to the spin current. Instead, the two-point correlation function reveals another discontinuity again around $J_z = 0.5$: for $J_z < 0.5$, it is zero, while for $J_z > 0.5$, it has an exponential profile.
 
 In order to develop this analysis, three different numerical methods have been employed.  The fundamental use of the \emph{matrix product operators} (MPO) method\cite{mpo_method} has allowed us to compute the physical quantities for all lengths of the chain examined in this thesis (8, 12, 16 sites). A preexisting code has been adjusted for the problem under consideration. The \emph{quantum trajectories} (QT) method\cite{QT_method} has been useful to compare the results obtained from MPO for 8-sites chain and to explore the plausibility of some results for 10-sites chain. The \emph{corner-space renormalization} (CSR) method~\cite{CSR_method} has been studied and implemented but it seems not to be useful for this kind of quantum systems. In particular, it seems to work more properly when all the spins of the chain are coupled to dissipators. For the last two numerical methods, a code has been written and implemented from scratch, during this thesis work.
 
@@ -62,7 +62,7 @@ In order to develop this analysis, three different numerical methods have been e
 %three of them have been studied and implemented\footnote{\textcolor{red}{NOT %ALL OF THEM!}}, for the purpose of study some properties of a Heisenberg chain %coupled at boundaries to reservoirs. Three numerical strategies have been used %for this study: the \emph{quantum trajectories} (QT) method, the %\emph{corner-space renormalization} (CSR) method, the \emph{matrix product %density operator} (MPO) method. 
 
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{biblio}
 
 \end{document}
